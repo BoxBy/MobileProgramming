@@ -14,7 +14,7 @@
         <Button
             android:id="@+id/BtnSearchActivity"
             android:layout_width="200dp"
-            android:layout_height="0dp"
+            android:layout_height="50dp"
             android:layout_marginTop="63dp"
             android:layout_marginBottom="16dp"
             android:background="@color/pink"
@@ -27,7 +27,7 @@
         <Button
             android:id="@+id/BtnSelectActivity"
             android:layout_width="200dp"
-            android:layout_height="0dp"
+            android:layout_height="50dp"
             android:layout_marginBottom="370dp"
             android:background="@color/pink"
             android:text="Button"
@@ -39,7 +39,7 @@
         <Button
             android:id="@+id/BtnAddRecipeActivity"
             android:layout_width="200dp"
-            android:layout_height="0dp"
+            android:layout_height="50dp"
             android:layout_marginBottom="75dp"
             android:background="@color/pink"
             android:text="Button"
