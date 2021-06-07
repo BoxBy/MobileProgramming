@@ -1,5 +1,3 @@
-com/example/timer/databinding/PickerBinding.java
- com.example.timer.databinding.PickerBinding
 com/example/timer/BuildConfig.java
  com.example.timer.BuildConfig
 com/example/timer/databinding/ActivityMainBinding.java
