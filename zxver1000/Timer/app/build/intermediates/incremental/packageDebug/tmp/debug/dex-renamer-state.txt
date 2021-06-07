@@ -1,4 +1,4 @@
-#Mon Jun 07 03:11:08 KST 2021
-base.0=C\:\\Users\\hoosa\\Desktop\\git\\MobileProgramming\\zxver1000\\Timer\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Mon Jun 07 22:20:09 KST 2021
+base.0=D\:\\OneDrive - konkuk.ac.kr\\workspace\\MobileProgramming\\zxver1000\\Timer\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

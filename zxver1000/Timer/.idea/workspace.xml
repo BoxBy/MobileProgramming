@@ -10,14 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cda9057-a49a-4763-ba9d-95ae2da11bcc" name="Default Changelist" comment="mofe">
-      <change beforePath="$PROJECT_DIR$/../../HunkiKim/Firebase/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HunkiKim/Firebase/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HunkiKim/Firebase/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HunkiKim/Firebase/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/AddRecipeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/AddRecipeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/IntroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/IntroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/SearchRecipeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/SearchRecipeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/SelectIngredientsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/java/com/example/myrecipe/activity/SelectIngredientsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/res/layout/activity_add_recipe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/res/layout/activity_add_recipe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/res/layout/activity_intro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/MyRecipe/app/src/main/res/layout/activity_intro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rehoosa/앱 기획서.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../rehoosa/앱 기획서.pptx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5X_API_28]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
