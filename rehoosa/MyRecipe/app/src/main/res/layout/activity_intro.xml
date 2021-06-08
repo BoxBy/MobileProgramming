@@ -13,20 +13,11 @@
 
         <Button
             android:id="@+id/BtnSearchActivity"
-<<<<<<< HEAD
             android:layout_width="300dp"
             android:layout_height="270dp"
             android:background="@drawable/round_square"
             android:text="레시피 검색"
             android:textSize="30sp"
-=======
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="63dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/pink"
-            android:text="Button"
->>>>>>> 19de9af6d401aab5a86e44d26f9adb356b5f90cd
             app:layout_constraintBottom_toTopOf="@+id/BtnSelectActivity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
@@ -36,20 +27,12 @@
 
         <Button
             android:id="@+id/BtnSelectActivity"
-<<<<<<< HEAD
             android:layout_width="300dp"
             android:layout_height="153dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_square"
             android:text="남는 재료 선택"
             android:textSize="24sp"
-=======
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="370dp"
-            android:background="@color/pink"
-            android:text="Button"
->>>>>>> 19de9af6d401aab5a86e44d26f9adb356b5f90cd
             app:layout_constraintBottom_toTopOf="@+id/BtnAddRecipeActivity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
@@ -57,7 +40,6 @@
 
         <Button
             android:id="@+id/BtnAddRecipeActivity"
-<<<<<<< HEAD
             android:layout_width="160dp"
             android:layout_height="42dp"
             android:layout_marginBottom="48dp"
@@ -67,13 +49,6 @@
             android:lineSpacingExtra="8sp"
             android:text="레시피 추가"
             android:textSize="18sp"
-=======
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="75dp"
-            android:background="@color/pink"
-            android:text="Button"
->>>>>>> 19de9af6d401aab5a86e44d26f9adb356b5f90cd
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
