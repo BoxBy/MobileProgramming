@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/row_divider"
+    android:orientation="vertical"
+    android:showDividers="middle|end"
+    tools:context=".activity.MarketInfoActivity">
+
+    <TextView
+        android:id="@+id/marketInfo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/pink"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="마트 안내 화면"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pink"
+        android:backgroundTint="@color/pink">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가격순" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="거리순" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/pink"
+        android:gravity="center|center_vertical"
+        android:text="마트 목록"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
