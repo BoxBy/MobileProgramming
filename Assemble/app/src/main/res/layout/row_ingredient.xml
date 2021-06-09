@@ -13,21 +13,21 @@
         android:paddingRight="20dp">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgIngredient"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewIngredientTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="8"
             android:text="TextView" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imgIsChecked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
