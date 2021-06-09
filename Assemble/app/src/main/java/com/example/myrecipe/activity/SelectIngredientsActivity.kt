@@ -3,6 +3,9 @@ package com.example.myrecipe.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myrecipe.R
+import com.example.myrecipe.databinding.ActivitySelectIngredientsBinding
+import com.example.myrecipe.ui.IngredientFragmentAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
 // 남는 재료 선택 – 남는 재료 선택
 // 개요 : 남는 재료 선택을 누를시 나오는 화면이다.
@@ -17,8 +20,20 @@ import com.example.myrecipe.R
 
 
 class SelectIngredientsActivity : AppCompatActivity() {
+    lateinit var binding:ActivitySelectIngredientsBinding
+    val textarr = arrayListOf<String>("남는 재료 선택", "추가 재료 선택")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_select_ingredients)
+        binding = ActivitySelectIngredientsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initViewPager()
+    }
+
+    private fun initViewPager() {
+        binding.ingredientViewPager.adapter = IngredientFragmentAdapter(this)
+        TabLayoutMediator(binding.ingredientTabLayout, binding.ingredientViewPager) { tab, position ->
+            tab.text = textarr[position]
+        }.attach()
     }
 }
