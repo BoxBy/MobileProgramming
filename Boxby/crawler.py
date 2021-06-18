@@ -29,6 +29,7 @@ def PageCwarler(recipeUrl):
 
         res = soup.find('div', 'ready_ingre3')
     except:
+        print('Title Error')
         return None
 
     # Find Title_Image
@@ -37,6 +38,7 @@ def PageCwarler(recipeUrl):
         img = img.find('img')
         recipe_image.append(('title', img['src']))
     except:
+        print('Title Image Error')
         return None
 
     # Find Source
@@ -49,6 +51,7 @@ def PageCwarler(recipeUrl):
                 source.append(tmp.get_text().replace('\n', '').replace(' ', ''))
                 recipe_source[title] = source
     except (AttributeError):
+        print('Source Error')
         return None
     
     # Find Step & Step Image
@@ -59,8 +62,10 @@ def PageCwarler(recipeUrl):
             i = i + 1
             recipe_step.append('#' + str(i) + ' ' + n.get_text().replace('\n', ' '))
             n = n.find('img')
-            recipe_image.append((i, n['src']))
+            if n is not None:
+                recipe_image.append((i, n['src']))
     except:
+        print('Step & Step Image Error')
         return None
     
     # Tag
