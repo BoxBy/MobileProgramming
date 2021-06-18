@@ -1,15 +1,13 @@
-package com.example.mapssearch
+package com.example.myrecipe.activity
 
+import android.R
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.location.Address
 import android.location.Geocoder
-import android.location.Location
 import android.location.LocationManager
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -21,21 +19,20 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
-import com.example.mapssearch.databinding.ActivityMainBinding
+import com.example.myrecipe.MartData
+import com.example.myrecipe.databinding.ActivityMarketSearchBinding
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import java.lang.Exception
 import java.util.*
-import java.util.jar.Manifest
 import kotlin.collections.ArrayList
 import kotlin.math.pow
 
-class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+class MarketSearchActivity : AppCompatActivity() {
+    lateinit var binding:ActivityMarketSearchBinding
     lateinit var googleMap: GoogleMap
     lateinit var loc: LatLng
     val z = 6372.8 * 1000
@@ -49,16 +46,17 @@ class MainActivity : AppCompatActivity() {
     var alpa = 10.0
     var MM = "1"
     var num = 0
-    var MartList: ArrayList<Mart> = ArrayList()
+    var MartList: ArrayList<MartData> = ArrayList()
     var beta = 10.0
     var flag = true
     var startupdate = false
     var locationManager: LocationManager? = null
     lateinit var mapFragment: SupportMapFragment
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMarketSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initmap()
         //  initSpinner()
@@ -110,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                     longtitude = mg
                 }
                 num++
-                MartList.add(Mart(num, city, name, location, latitude, longtitude))
+                MartList.add(MartData(num, city, name, location, latitude, longtitude))
                 // val bbeta=Mart(num,city,name,location,latitude,longtitude)
                 //firebase //rdb.child("${num}").setValue(bbeta)
             }
@@ -122,13 +120,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initmart() {
-        val scan = Scanner(resources.openRawResource(R.raw.words))
+        val scan = Scanner(resources.openRawResource(com.example.myrecipe.R.raw.market))
         readfilescan(scan)
-
     }
 
 
-    fun icon(distance: Int, a: Mart) {
+    fun icon(distance: Int, a: MartData) {
 
         val option = MarkerOptions()
         option.position(LatLng(a.latitude.toDouble(), a.lontitude.toDouble()))
@@ -260,7 +257,7 @@ class MainActivity : AppCompatActivity() {
 
     fun initSpinner() {
         val adapter = ArrayAdapter<String>(
-            this, android.R.layout.simple_spinner_dropdown_item, ArrayList<String>()
+            this, R.layout.simple_spinner_dropdown_item, ArrayList<String>()
         )
         adapter.add("Hybrid")
         adapter.add("Normal")
@@ -429,7 +426,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initmap() {
         initlocation()
-        mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment = supportFragmentManager.findFragmentById(com.example.myrecipe.R.id.map) as SupportMapFragment
         mapFragment.getMapAsync {
             googleMap = it //구글맵초기화
 //            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,16.0f))
@@ -506,6 +503,5 @@ class MainActivity : AppCompatActivity() {
         val c = 2 * Math.asin(Math.sqrt(a))
         return (z * c).toInt()
     }
-
 
 }
