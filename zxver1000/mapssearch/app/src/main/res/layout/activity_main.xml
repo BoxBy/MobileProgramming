@@ -10,12 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/edit"
             android:layout_width="198dp"
             android:layout_height="61dp"
+            android:hint="찾을 위치를 입력하세요"
             android:layout_weight="10"
             android:ems="11" />
 
@@ -26,19 +28,28 @@
             android:layout_weight="1"
             android:text="위치검색" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:ems="11"
+            android:hint="경기도 시,군을 입력하세요"
+            android:completionThreshold="0"
+            android:completionHint="경기도 시,군 을입력하세요"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/current"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="현재위치" />
+            android:text="시 검색" />
     </LinearLayout>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
-        />
 
     <fragment
         android:id="@+id/map"
