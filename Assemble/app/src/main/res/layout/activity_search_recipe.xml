@@ -10,6 +10,7 @@
     tools:context=".activity.SearchRecipeActivity">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/RecipeTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/pink"
@@ -30,11 +31,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="태그검색" />
+            android:text="카테고리 검색" />
 
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/RecipeViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

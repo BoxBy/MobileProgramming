@@ -1,8 +1,7 @@
 package com.example.myrecipe.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myrecipe.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myrecipe.databinding.ActivityMarketInfoBinding
 
 class MarketInfoActivity : AppCompatActivity() {

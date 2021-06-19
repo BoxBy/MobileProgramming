@@ -1,8 +1,10 @@
 package com.example.myrecipe.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myrecipe.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.myrecipe.databinding.ActivitySearchRecipeBinding
+import com.example.myrecipe.ui.RecipeFragmentAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
 // 레시피 검색 - 이름 검색
 // 개요 : 레시피 검색을 누를시 나오는 화면이다.
@@ -19,8 +21,20 @@ import com.example.myrecipe.R
 // 태그를 선택시 서로 교집합만 보여준다.
 
 class SearchRecipeActivity : AppCompatActivity() {
+    lateinit var binding: ActivitySearchRecipeBinding
+    val textarr = arrayListOf<String>("이름 검색", "카테고리 검색")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search_recipe)
+        binding = ActivitySearchRecipeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initViewPager()
+    }
+
+    private fun initViewPager() {
+        binding.RecipeViewPager.adapter = RecipeFragmentAdapter(this)
+        TabLayoutMediator(binding.RecipeTabLayout, binding.RecipeViewPager) { tab, position ->
+            tab.text = textarr[position]
+        }.attach()
     }
 }

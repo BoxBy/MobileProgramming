@@ -1,9 +1,8 @@
 package com.example.myrecipe.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myrecipe.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myrecipe.databinding.ActivityIntroBinding
 
 // 로딩화면
