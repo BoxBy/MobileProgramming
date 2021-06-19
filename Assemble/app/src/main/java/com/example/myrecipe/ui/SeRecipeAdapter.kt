@@ -3,14 +3,11 @@ package com.example.myrecipe.ui
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myrecipe.R
 import com.example.myrecipe.RecipeData
-import com.example.myrecipe.activity.AddRecipeActivity
-import com.example.myrecipe.activity.IntroActivity
 import com.example.myrecipe.activity.reciepeActivity
 import com.example.myrecipe.databinding.RowRecipeBinding
 

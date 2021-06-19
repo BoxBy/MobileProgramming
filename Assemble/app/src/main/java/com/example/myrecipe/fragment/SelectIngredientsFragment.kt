@@ -1,5 +1,6 @@
 package com.example.myrecipe.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,12 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrecipe.R
 import com.example.myrecipe.RecipeData
 import com.example.myrecipe.activity.SelectIngredientsActivity
+import com.example.myrecipe.activity.ShowRecipeByIngredient
 import com.example.myrecipe.ui.*
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.*
@@ -27,7 +31,8 @@ class SelectIngredientsFragment : Fragment() {
     lateinit var rdb: DatabaseReference
     lateinit var adapter: FbRecipeAdapter
     lateinit var iadapter: IgRecipeAdapter
-    lateinit var viewModel:IngredientViewModel
+    lateinit var viewModel: IngredientViewModel
+    lateinit var textView: TextView
     var IL: List<String> = listOf()
     var IgList: ArrayList<String> = ArrayList()
 
@@ -44,7 +49,16 @@ class SelectIngredientsFragment : Fragment() {
             recyclerView = view.findViewById(R.id.recyclerView3)
         }
         init()
-        viewModel = ViewModelProvider(activity as SelectIngredientsActivity)[IngredientViewModel::class.java]
+        viewModel =
+            ViewModelProvider(activity as SelectIngredientsActivity)[IngredientViewModel::class.java]
+        textView = view.findViewById(R.id.textViewRecipe)
+        textView.setOnClickListener {
+            val intent = Intent(context,ShowRecipeByIngredient::class.java)
+            cList = iadapter.getCheckBox()
+            intent.putExtra("ing",IgList)
+            intent.putExtra("recipe",cList)
+            context?.startActivity(intent)
+        }
         return view
     }
 
@@ -55,7 +69,7 @@ class SelectIngredientsFragment : Fragment() {
         viewModel.setCheck(IgList)
     }
 
-    fun init(){
+    fun init() {
         rdb = FirebaseDatabase.getInstance("https://recipe-96ca4-default-rtdb.firebaseio.com/")
             .getReference("Recipe")
         val query = rdb.limitToLast(100)
@@ -71,7 +85,6 @@ class SelectIngredientsFragment : Fragment() {
                         changeIgList()
                         recyclerView.adapter?.notifyDataSetChanged()
                     }
-                    //      binding.textView7.text=apo?.word
                 }
             }
 
@@ -86,40 +99,9 @@ class SelectIngredientsFragment : Fragment() {
         iadapter = IgRecipeAdapter(IgList)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = iadapter
-//        rbtn.setOnClickListener {
-//
-//            numList.clear()
-//            for (i in cList) {
-//                if (i.checked)
-//                    numList.add(i.id)
-//            }
-//            var rrList: ArrayList<RecipeData> = rList.clone() as ArrayList<RecipeData>
-//            var count = 0
-//            var flag = false
-//            for (j in 0..rrList.size - 1) {
-//
-//                for (i in numList) {
-//                    if (rrList[count].ingredient.contains(IgList[i])) {
-//
-//                    } else {
-//                        rrList.remove(rrList[count])
-//                        flag = true
-//                        break
-//                    }
-//                }
-//                if (flag == true) {
-//                    flag = false
-//                    continue
-//                }
-//                count++
-//            }
-//            sadapter = SeRecipeAdapter(rrList)
-//            recyclerView.layoutManager = layoutManager
-//            recyclerView.adapter = sadapter
-//        }
     }
 
-    fun changeIgList(){
+    fun changeIgList() {
         for (i in rList) {
             IL = i.ingredient.split('\n')
             for (j in IL) {

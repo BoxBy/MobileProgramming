@@ -14,7 +14,9 @@
         <Button
             android:id="@+id/BtnSearchActivity"
             android:layout_width="300dp"
-            android:layout_height="270dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="119dp"
+            android:layout_marginBottom="75dp"
             android:background="@drawable/round_square"
             android:text="레시피 검색"
             android:textSize="30sp"
@@ -28,31 +30,16 @@
         <Button
             android:id="@+id/BtnSelectActivity"
             android:layout_width="300dp"
-            android:layout_height="153dp"
-            android:layout_marginBottom="24dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="114dp"
             android:background="@drawable/round_square"
             android:text="남는 재료 선택"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/BtnAddRecipeActivity"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/BtnAddRecipeActivity"
-            android:layout_width="160dp"
-            android:layout_height="42dp"
-            android:layout_marginBottom="48dp"
-            android:background="@drawable/round_square"
-            android:fontFamily="sans-serif-medium"
-            android:letterSpacing="0.2"
-            android:lineSpacingExtra="8sp"
-            android:text="레시피 추가"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnSearchActivity" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

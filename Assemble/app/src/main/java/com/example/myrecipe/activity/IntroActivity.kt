@@ -21,10 +21,6 @@ class IntroActivity : AppCompatActivity() {
 
     fun init(){
         with(binding){
-            BtnAddRecipeActivity.setOnClickListener {
-                val intent = Intent(this@IntroActivity, AddRecipeActivity::class.java)
-                startActivity(intent)
-            }
             BtnSearchActivity.setOnClickListener {
                 val intent = Intent(this@IntroActivity, SearchRecipeActivity::class.java)
                 startActivity(intent)
