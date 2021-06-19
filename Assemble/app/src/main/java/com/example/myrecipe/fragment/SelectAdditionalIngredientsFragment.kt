@@ -57,7 +57,7 @@ class SelectAdditionalIngredientsFragment : Fragment() {
                 position: Int
             ) {
                 val temp2 = iadapter.getChecked() - count
-                textView.text = temp2.toString() + "개 선택됨"
+                textView.text = temp2.toString() + "개 추가로 선택됨"
             }
 
         }
