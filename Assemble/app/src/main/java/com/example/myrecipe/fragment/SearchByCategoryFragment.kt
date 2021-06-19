@@ -183,6 +183,8 @@ class SearchByCategoryFragment : Fragment() {
                     if(rgroup2.checkedRadioButtonId==-1){
                         for(i in 0 until rList.size){
                             num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                            if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                continue
                             if(num>30){
                                 cList.add(rList[i])
                             }
@@ -193,6 +195,8 @@ class SearchByCategoryFragment : Fragment() {
                         if(ebtn.isChecked){
                             for(i in 0 until rList.size){
                                 num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                                if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                    continue
                                 if((rList[i].difficulty.contains("아무나") || rList[i].difficulty.contains("초급")) && num>30){
                                     cList.add(rList[i])
                                 }
@@ -203,6 +207,8 @@ class SearchByCategoryFragment : Fragment() {
                         else if(mbtn.isChecked){
                             for(i in 0 until rList.size){
                                 num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                                if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                    continue
                                 if(rList[i].difficulty.contains("중급") && num>30){
                                     cList.add(rList[i])
                                 }
@@ -213,6 +219,8 @@ class SearchByCategoryFragment : Fragment() {
                         else{
                             for(i in 0 until rList.size){
                                 num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                                if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                    continue
                                 if(rList[i].difficulty.contains("고급") && num>30 ){
                                     cList.add(rList[i])
                                 }
@@ -267,6 +275,8 @@ class SearchByCategoryFragment : Fragment() {
                             if(rList.size>0){
                                 for(i in 0 until rList.size){
                                     num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                                    if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                        continue
                                     if((rList[i].difficulty.contains("아무나") || rList[i].difficulty.contains("초급")) && num>30){
                                         cList.add(rList[i])
                                     }
@@ -319,6 +329,8 @@ class SearchByCategoryFragment : Fragment() {
                             if(rList.size>0){
                                 for(i in 0 until rList.size){
                                     num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                                    if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                        continue
                                     if(rList[i].difficulty.contains("중급") && num>30){
                                         cList.add(rList[i])
                                     }
@@ -371,6 +383,8 @@ class SearchByCategoryFragment : Fragment() {
                             if(rList.size>0){
                                 for(i in 0 until rList.size){
                                     num = (rList[i].cooking_time[0].toInt() - 48)*10 + (rList[i].cooking_time[1].toInt() - 48)
+                                    if(rList[i].cooking_time[1].toInt()<48 || rList[i].cooking_time[1].toInt()>57)
+                                        continue
                                     if(rList[i].difficulty.contains("고급") && num>30){
                                         cList.add(rList[i])
                                     }
