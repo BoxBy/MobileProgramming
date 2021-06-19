@@ -1,5 +1,7 @@
 package com.example.myrecipe.ui
 
-data class checkboxData(var id: Int, var checked: Boolean) {
+import java.io.Serializable
+
+data class checkboxData(var id: Int, var checked: Boolean) :Serializable {
 
 }
