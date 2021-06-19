@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import com.example.myrecipe.R
 import com.example.myrecipe.RecipeData
 import com.example.myrecipe.activity.MarketSearchActivity
@@ -25,6 +27,7 @@ class SelectAdditionalIngredientsFragment : Fragment() {
     lateinit var viewModel: IngredientViewModel
     lateinit var recyclerView: RecyclerView
     lateinit var iadapter: IgRecipeAdapter
+    lateinit var textView: TextView
     var cList: ArrayList<checkboxData> = ArrayList()
     var igList: ArrayList<String> = ArrayList()
 
@@ -40,7 +43,24 @@ class SelectAdditionalIngredientsFragment : Fragment() {
         super.onResume()
         igList = viewModel.IgList
         cList = viewModel.cList
+        var count = 0
+        for(temp in cList){
+            if(temp.checked)
+                count++
+        }
         iadapter = IgRecipeAdapter(igList)
+        iadapter.itemClickListener = object :IgRecipeAdapter.OnItemClickListener{
+            override fun OnitemClick(
+                holder: RowIngredientBinding,
+                view: View,
+                data: String,
+                position: Int
+            ) {
+                val temp2 = iadapter.getChecked() - count
+                textView.text = temp2.toString() + "개 선택됨"
+            }
+
+        }
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = iadapter
     }
@@ -56,6 +76,7 @@ class SelectAdditionalIngredientsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_select_additional_ingredients, container, false)
         var text = view.findViewById<TextView>(R.id.textViewMarket)
+        textView = view.findViewById(R.id.textViewTotal)
         recyclerView = view.findViewById(R.id.recyclerViewExtraIngredient)
         layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         text.setOnClickListener {

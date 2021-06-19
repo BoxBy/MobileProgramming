@@ -14,6 +14,11 @@ class IgRecipeAdapter(val items:ArrayList<String>):
     companion object{
         var checkboxList = arrayListOf<checkboxData>()
     }
+    interface OnItemClickListener{
+        fun OnitemClick(holder: RowIngredientBinding, view:View, data: String, position: Int)
+    }
+    var itemClickListener:OnItemClickListener?=null
+
     inner class ViewHolder(val binding: RowIngredientBinding): RecyclerView.ViewHolder(binding.root){
         var checkbox: CheckBox = itemView!!.findViewById(R.id.checkBox)
         var ig: TextView = itemView!!.findViewById<TextView>(R.id.igtext)
@@ -27,6 +32,7 @@ class IgRecipeAdapter(val items:ArrayList<String>):
 
                 checkBox.setOnClickListener {
                     checkboxList[num].checked = checkbox.isChecked
+                    itemClickListener?.OnitemClick(this, it, items[adapterPosition], adapterPosition)
                 }
             }
         }
@@ -45,6 +51,15 @@ class IgRecipeAdapter(val items:ArrayList<String>):
     }
     fun getCheckBox(): ArrayList<checkboxData>{
         return checkboxList
+    }
+
+    fun getChecked(): Int{
+        var count = 0
+        for(temp in checkboxList){
+            if(temp.checked)
+                count++
+        }
+        return count
     }
 
 }
