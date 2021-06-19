@@ -1,5 +1,6 @@
 package com.example.myrecipe.ui
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
@@ -13,7 +14,6 @@ class IgRecipeAdapter(val items:ArrayList<String>):
     companion object{
         var checkboxList = arrayListOf<checkboxData>()
     }
-    var IgList:ArrayList<String> = ArrayList()
     inner class ViewHolder(val binding: RowIngredientBinding): RecyclerView.ViewHolder(binding.root){
         var checkbox: CheckBox = itemView!!.findViewById(R.id.checkBox)
         var ig: TextView = itemView!!.findViewById<TextView>(R.id.igtext)

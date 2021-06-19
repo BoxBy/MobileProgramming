@@ -2,9 +2,11 @@ package com.example.myrecipe.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.example.myrecipe.R
 import com.example.myrecipe.databinding.ActivitySelectIngredientsBinding
 import com.example.myrecipe.ui.IngredientFragmentAdapter
+import com.example.myrecipe.ui.IngredientViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 // 남는 재료 선택 – 남는 재료 선택
@@ -21,6 +23,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class SelectIngredientsActivity : AppCompatActivity() {
     lateinit var binding:ActivitySelectIngredientsBinding
+    lateinit var viewModel: IngredientViewModel
     val textarr = arrayListOf<String>("남는 재료 선택", "추가 재료 선택")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,5 +38,6 @@ class SelectIngredientsActivity : AppCompatActivity() {
         TabLayoutMediator(binding.ingredientTabLayout, binding.ingredientViewPager) { tab, position ->
             tab.text = textarr[position]
         }.attach()
+        viewModel = ViewModelProvider(this).get(IngredientViewModel::class.java)
     }
 }

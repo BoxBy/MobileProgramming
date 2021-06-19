@@ -7,14 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrecipe.R
 import com.example.myrecipe.RecipeData
-import com.example.myrecipe.ui.FbRecipeAdapter
-import com.example.myrecipe.ui.IgRecipeAdapter
-import com.example.myrecipe.ui.SeRecipeAdapter
-import com.example.myrecipe.ui.checkboxData
+import com.example.myrecipe.activity.SelectIngredientsActivity
+import com.example.myrecipe.ui.*
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.*
 
@@ -22,20 +21,16 @@ import com.google.firebase.database.*
 class SelectIngredientsFragment : Fragment() {
     var rList: ArrayList<RecipeData> = ArrayList()
     var cList: ArrayList<checkboxData> = ArrayList()
-    var numList: ArrayList<Int> = ArrayList()
-    var ingList: ArrayList<String> = ArrayList()
+
     lateinit var recyclerView: RecyclerView
     lateinit var layoutManager: LinearLayoutManager
     lateinit var rdb: DatabaseReference
     lateinit var adapter: FbRecipeAdapter
     lateinit var iadapter: IgRecipeAdapter
-    lateinit var sadapter: SeRecipeAdapter
+    lateinit var viewModel:IngredientViewModel
     var IL: List<String> = listOf()
     var IgList: ArrayList<String> = ArrayList()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,11 +44,15 @@ class SelectIngredientsFragment : Fragment() {
             recyclerView = view.findViewById(R.id.recyclerView3)
         }
         init()
+        viewModel = ViewModelProvider(activity as SelectIngredientsActivity)[IngredientViewModel::class.java]
         return view
     }
 
-    fun init2(){
-
+    override fun onPause() {
+        super.onPause()
+        viewModel.IgList = IgList
+        viewModel.cList = iadapter.getCheckBox()
+        viewModel.setCheck(IgList)
     }
 
     fun init(){
@@ -82,16 +81,13 @@ class SelectIngredientsFragment : Fragment() {
         rdb.addValueEventListener(postLister)
         rdb.get()
         adapter = FbRecipeAdapter(option)
-        adapter.startListening()
-        adapter.stopListening()
 
         changeIgList()
         iadapter = IgRecipeAdapter(IgList)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = iadapter
-
 //        rbtn.setOnClickListener {
-//            cList = iadapter.getCheckBox()
+//
 //            numList.clear()
 //            for (i in cList) {
 //                if (i.checked)
