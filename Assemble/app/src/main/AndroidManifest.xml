@@ -37,7 +37,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="API키 입력해주세요" />
-
+        <activity android:name=".activity.ShowRecipeByIngredient"></activity>
         <activity
             android:name=".activity.MarketSearchActivity"
             android:exported="true" />
