@@ -4,35 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fragment.SelectIngredientsFragment">
-
-    <Button
-        android:id="@+id/ingrebtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:backgroundTint="#E1DFDF"
-        android:gravity="center"
-        android:text="남은 재료 선택"
-        android:textColor="@color/black" />
+    tools:context=".fragment.SelectIngredientsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <Button
-        android:id="@+id/recipeview"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:id="@+id/textViewRecipe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:backgroundTint="#E1DFDF"
-        android:textSize="28dp"
-        android:gravity="center"
+        android:layout_height="80dp"
+        android:background="@color/pink"
+        android:gravity="center|center_vertical"
         android:text="레시피 보기"
-        android:textColor="@color/black" />
-
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </LinearLayout>
