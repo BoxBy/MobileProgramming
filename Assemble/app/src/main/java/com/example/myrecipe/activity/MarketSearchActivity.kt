@@ -63,7 +63,7 @@ class MarketSearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMarketSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initDB()
+      //  initDB()
         initmap()
         inita()
     }
@@ -208,6 +208,12 @@ class MarketSearchActivity : AppCompatActivity() {
 
     fun inita()
     {
+
+        binding.martList.setOnClickListener {
+            val intent=Intent(this,all_mart_Activity::class.java)
+            startActivity(intent)
+
+        }
 
         var items=""
         adapter= ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,city_arr)
