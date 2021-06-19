@@ -51,10 +51,30 @@
             android:text="시 검색" />
     </LinearLayout>
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/mart_list"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/pink"
+        android:gravity="center|center_vertical"
+        android:text="마트 목록"
+
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -1,17 +1,26 @@
 package com.example.myrecipe.ui
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myrecipe.R
 import com.example.myrecipe.RecipeData
+import com.example.myrecipe.activity.AddRecipeActivity
+import com.example.myrecipe.activity.IntroActivity
+import com.example.myrecipe.activity.reciepeActivity
 import com.example.myrecipe.databinding.RowRecipeBinding
 
 
 class SeRecipeAdapter(val items:ArrayList<RecipeData>):
     RecyclerView.Adapter<SeRecipeAdapter.ViewHolder>()
 {
+    companion object{
+
+    }
     inner class ViewHolder(val binding: RowRecipeBinding): RecyclerView.ViewHolder(binding.root){
 
         init {
@@ -37,7 +46,17 @@ class SeRecipeAdapter(val items:ArrayList<RecipeData>):
             }
 
         }
+        holder.itemView.setOnClickListener {
+            var intent = Intent(holder.itemView?.context, reciepeActivity::class.java)
+            intent.putExtra("time",items[position].cooking_time)
+            intent.putExtra("ingredient",items[position].ingredient)
+            intent.putExtra("cooking",items[position].cooking)
+            intent.putExtra("name",items[position].name)
+            intent.putExtra("img", items[position].img)
+            startActivity(holder.itemView.context, intent,null)
+        }
     }
+
 
     override fun getItemCount(): Int {
         return items.size
